@@ -1,51 +1,31 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 public class AddRemoveElements {
+
     WebDriver driver;
 
-    @BeforeMethod
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.setHeadless(false);
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    @Test
+    public void addRemoveTest() {
+
+        // Установить системную переменную
+        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+        driver = new ChromeDriver();
+
+        // Открыть сайт
+        driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
+
+        // Add 2 Elements
+        WebElement addElement = driver.findElement(By.xpath("//*[@onclick='addElement()']"));
+        addElement.click();
+        addElement.click();
+
+        //  Remove elements
+        List <WebElement> deleteElement = driver.findElements(By.xpath("//*[@onclick='deleteElement()']"));
+        deleteElement.get(0).click();
     }
-
-
-
-@Test
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
-
-
-
-
 }
