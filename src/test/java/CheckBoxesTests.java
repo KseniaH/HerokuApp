@@ -22,6 +22,7 @@ public class CheckBoxesTests {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
 
         // проверить, что первый чекбокс unchecked, отметить первый чекбокс, проверить что он checked
+
         List<WebElement> checkboxes = driver.findElements(By.tagName("input"));
         assertFalse(checkboxes.get(0).isSelected(), "First Checkbox is not checked");
         checkboxes.get(0).click();
