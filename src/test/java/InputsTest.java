@@ -24,9 +24,7 @@ public class InputsTest {
         input.sendKeys("9");
         input.sendKeys(Keys.ARROW_UP);
         Assert.assertEquals(input.getAttribute("value"), "10");
-        input.clear();
-        input.sendKeys("9");
         input.sendKeys(Keys.ARROW_DOWN);
-        Assert.assertEquals(input.getAttribute("value"), "8");
+        Assert.assertEquals(input.getAttribute("value"), "9");
 }
 }
