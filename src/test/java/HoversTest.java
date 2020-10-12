@@ -26,16 +26,16 @@ public class HoversTest {
         // проверка 404 ошибки. Повторить для каждого из профилей
 
 
-        WebElement image = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/img"));
+        WebElement image = driver.findElement(By.cssSelector("#content > div > div:nth-child(3) > img"));
         Actions action = new Actions(driver);
         action.moveToElement(image).perform();
 
 
-        WebElement user = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/h5"));
+        WebElement user = driver.findElement(By.cssSelector("#content > div > div:nth-child(3) > div > h5"));
         String actualResult = user.getText();
         Assert.assertEquals(actualResult, "name: user1");
 
-        WebElement link = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a"));
+        WebElement link = driver.findElement(By.linkText("View profile"));
         action.moveToElement(link).click().perform();
 
         WebElement text = driver.findElement(By.tagName("h1"));
