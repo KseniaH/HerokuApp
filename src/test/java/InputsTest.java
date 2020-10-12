@@ -20,11 +20,11 @@ public class InputsTest {
         // Открыть сайт
         driver.get("http://the-internet.herokuapp.com/inputs");
 
-    WebElement input = driver.findElement(By.tagName("input"));
+        WebElement input = driver.findElement(By.tagName("input"));
         input.sendKeys("9");
         input.sendKeys(Keys.ARROW_UP);
         Assert.assertEquals(input.getAttribute("value"), "10");
         input.sendKeys(Keys.ARROW_DOWN);
         Assert.assertEquals(input.getAttribute("value"), "9");
-}
+    }
 }

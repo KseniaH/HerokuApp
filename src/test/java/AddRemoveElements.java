@@ -3,7 +3,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+
 import java.util.List;
+
+import static org.testng.Assert.assertEquals;
 
 public class AddRemoveElements {
 
@@ -13,7 +16,7 @@ public class AddRemoveElements {
     public void addRemoveTest() {
 
         // Установить системную переменную
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
 
         // Открыть сайт
@@ -25,7 +28,8 @@ public class AddRemoveElements {
         addElement.click();
 
         //  Remove elements
-        List <WebElement> deleteElement = driver.findElements(By.xpath("//*[@onclick='deleteElement()']"));
+        List<WebElement> deleteElement = driver.findElements(By.xpath("//*[@onclick='deleteElement()']"));
         deleteElement.get(0).click();
+        assertEquals(driver.findElements(By.id("elements")).size(), 1, "1 Element should display");
     }
 }

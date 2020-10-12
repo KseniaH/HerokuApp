@@ -3,7 +3,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+
 import java.util.List;
+
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
@@ -15,7 +17,7 @@ public class CheckBoxesTests {
     public void checkboxesTest() {
 
         // Установить системную переменную
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
 
         // Открыть сайт

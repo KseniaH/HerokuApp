@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.assertEquals;
 
 public class HoversTest {
@@ -21,9 +22,8 @@ public class HoversTest {
         // Открыть сайт
         driver.get("http://the-internet.herokuapp.com/hovers");
 
- // Сделать цепочку из действий: наведение на профиль, проверка имени, клик по ссылке,
+        // Сделать цепочку из действий: наведение на профиль, проверка имени, клик по ссылке,
         // проверка 404 ошибки. Повторить для каждого из профилей
-
 
 
         WebElement image = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/img"));
