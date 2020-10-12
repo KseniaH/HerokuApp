@@ -32,9 +32,9 @@ public class DropDownTest {
 
         assertEquals(select.getOptions().size(), 3, "3 options");
         select.selectByValue("1");
-        assertTrue(select.getFirstSelectedOption().isSelected(), "Option 1 was selected");
+        assertTrue(select.getFirstSelectedOption().isSelected(), "Option 1");
         select.selectByValue("2");
-        assertTrue(select.getFirstSelectedOption().isSelected(), "Option 2 was selected");
+        assertTrue(select.getFirstSelectedOption().isSelected(), "Option 2");
 
     }
 }
